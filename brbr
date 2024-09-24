@@ -1,14 +1,25 @@
 // CLASSE PARA O TRABALHO
 import java.util.Scanner;
+import java.util.Arraylist;
 
 public class Questao {
-    String pergunta = "01 - Qual o nome do chefe de Elden Ring com o maior drop de runas? (jogo base)";
-    String opcaoA = "Elden Beast";
-    String opcaoB = "Maliketh";
-    String opcaoC = "Godfrey";
-    String opcaoD = "Malenia";
-    String opcaoE = "Gigante de Fogo";
-    String correta = "A";
+    String pergunta;
+    String opcaoA;
+    String opcaoB;
+    String opcaoC;
+    String opcaoD;
+    String opcaoE;
+    String correta;
+
+  public Questao(String pergunta, String opcaoA, String opcaoB, String opcaoC, String opcaoD, String opcaoE, String correta) {
+        this.pergunta = pergunta;
+        this.opcaoA = opcaoA;
+        this.opcaoB = opcaoB;
+        this.opcaoC = opcaoC;
+        this.opcaoD = opcaoD;
+        this.opcaoE = opcaoE;
+        this.correta = correta;
+    }
 
     public boolean isCorreta(String resposta){
         if(resposta.equalsIgnoreCase(this.correta)){
@@ -43,7 +54,7 @@ public class Questao {
         return false;
     }
 
-         public void cabecalho(){
+        public static void cabecalho(){
         System.out.println("UNIFAN - Universidade Alfredo Nasser");
         System.out.println("Aluno: Antony Gabriel Moreira de Carvalho");
         System.out.println("Professor: Brenno Pimenta");
@@ -62,13 +73,40 @@ public class Questao {
         System.out.println(this.opcaoE);
         System.out.println();
 }
-            public static void main(String[] args) {
-            Questao questao = new Questao();
-            questao.cabecalho();
+   // Método main para iniciar o programa
+    public static void main(String[] args) {
+
+        cabecalho();
+
+        ArrayList<Questao> questoes = new ArrayList<>();
+
+        questoes.add(new Questao(
+                "01 - Qual o nome do chefe de Elden Ring com o maior drop de runas? (jogo base)",
+                "A) Elden Beast", "B) Maliketh", "C) Godfrey", "D) Malenia", "E) Gigante de Fogo", "A"
+        ));
+
+        questoes.add(new Questao(
+                "02 - Qual o nome da arma lendária obtida ao derrotar o chefe final?",
+                "A) Espada da Luz", "B) Relâmpago de Maliketh", "C) Espada Sagrada de Marika", "D) Grande Espada da Ruína", "E) Cajado de Radagon", "C"
+        ));
+
+        questoes.add(new Questao(
+                "03 - Quem é o primeiro chefe principal do jogo?",
+                "A) Godrick, o Enxertado", "B) Malenia, a Espada de Miquella", "C) Margit, o Agouro Caído", "D) Rennala, Rainha da Lua Cheia", "E) Radahn, o Flagelo Celeste", "C"
+        ));
+
+        questoes.add(new Questao(
+                "04 - Quem é a mãe de Ranni, Radahn e Rykard?",
+                "A) Malenia, Lâmina de Miquella", "B) Romina, Santa do Bulbo", "C) Rya, da Mansão Vulcânica", "D) Rennala, Rainha da Lua Cheia", "E) Rellana, das Lâminas Gêmeas", "D"
+        ));
+
+        for (Questao questao : questoes) {
             questao.escrevaQuestao();
             String resposta = questao.leiaResposta();
             questao.isCorreta(resposta);
         }
 
+        System.out.println("Fim do questionário. Obrigado por participar!");
+    }
 }
 

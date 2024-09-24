@@ -2,7 +2,7 @@
 import java.util.Scanner;
 
 public class Questao {
-    String pergunta = "Qual o nome do chefe de Elden Ring com o maior drop de runas? (jogo base)";
+    String pergunta = "01 - Qual o nome do chefe de Elden Ring com o maior drop de runas? (jogo base)";
     String opcaoA = "Elden Beast";
     String opcaoB = "Maliketh";
     String opcaoC = "Godfrey";
@@ -43,6 +43,15 @@ public class Questao {
         return false;
     }
 
+         public void cabecalho(){
+        System.out.println("UNIFAN - Universidade Alfredo Nasser");
+        System.out.println("Aluno: Antony Gabriel Moreira de Carvalho");
+        System.out.println("Professor: Brenno Pimenta");
+        System.out.println("Boas vindas a todos!!! Bem vindo ao questionário de Elden Ring.");
+        System.out.println("Neste questionário você responderá a 15 questões sobre o GOTY de 2022, passando por inimigos, armas e lore, boa sorte!!!");
+        System.out.println();
+    }
+
     public void escrevaQuestao(){
         System.out.println(this.pergunta);
         System.out.println();
@@ -55,6 +64,7 @@ public class Questao {
 }
             public static void main(String[] args) {
             Questao questao = new Questao();
+            questao.cabecalho();
             questao.escrevaQuestao();
             String resposta = questao.leiaResposta();
             questao.isCorreta(resposta);

@@ -1,8 +1,6 @@
 // CLASSE PARA O TRABALHO
 import java.util.Scanner;
 
-public static avoid main(String[] args) {}
-
 public class Questao {
     String pergunta = "Qual o nome do chefe de Elden Ring com o maior drop de runas? (jogo base)";
     String opcaoA = "Elden Beast";
@@ -55,7 +53,12 @@ public class Questao {
         System.out.println(this.opcaoE);
         System.out.println();
 }
-
+            public static void main(String[] args) {
+            Questao questao = new Questao();
+            questao.escrevaQuestao();
+            String resposta = questao.leiaResposta();
+            questao.isCorreta(resposta);
+        }
 
 }
 

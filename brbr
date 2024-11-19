@@ -176,4 +176,10 @@ public class Questao {
         System.out.println("Fim do questionário. Obrigado por participar!");
         System.out.println("Você acertou " + acertos + " de " + questoes.size() + " questões.");
         System.out.println("Você errou " + erros + " de " + questoes.size() + " questões.");
+
+         double percentualAcertos = (double) acertos / questoes.size() * 100;
+        double percentualErros = (double) erros / questoes.size() * 100;
+
+        System.out.println("Você acertou " + String.format("%.2f", percentualAcertos) + "% das questões.");
+        System.out.println("Você errou " + String.format("%.2f", percentualErros) + "% das questões.");
     }}

@@ -83,6 +83,7 @@ public class Questao {
         cabecalho();
 
         ArrayList<Questao> questoes = new ArrayList<>();
+        int acertos = 0;
 
         questoes.add(new Questao(
                 "01 - Qual o nome do chefe de Elden Ring com o maior drop de runas? (jogo base)",
@@ -164,9 +165,13 @@ public class Questao {
             questao.escrevaQuestao();
             String resposta = questao.leiaResposta();
             questao.isCorreta(resposta);
+            if (questao.isCorreta(resposta)) {
+                acertos++;
+            }
         }
 
         System.out.println("Fim do questionário. Obrigado por participar!");
+        System.out.println("Você acertou " + acertos + " de " + questoes.size() + " questões.");
     }
 }
 

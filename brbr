@@ -116,7 +116,7 @@ public class Questao {
 
         questoes.add(new Questao(
                 "07 - Qual item é necessário para acessar a Cidade Eterna, Nokron?",
-                "A) Medalhão de Dectus", "B) Anel de Lua Negra", "C) Lâmina de Miquella", "D) Fragmento do Destino", "E) Adaga de Mogh", "D"
+                "A) Medalhão de Dectus", "B) Anel de Lua Negra", "C) Lâmina de Miquella", "D) Nenhum dos anteriores", "E) Adaga de Mogh", "D"
         ));
 
         questoes.add(new Questao(

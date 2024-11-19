@@ -1,6 +1,7 @@
 // CLASSE PARA O TRABALHO
 import java.util.Scanner;
-import java.util.Arraylist;
+import java.util.ArrayList;
+
 
 public class Questao {
     String pergunta;
@@ -11,7 +12,7 @@ public class Questao {
     String opcaoE;
     String correta;
 
-  public Questao(String pergunta, String opcaoA, String opcaoB, String opcaoC, String opcaoD, String opcaoE, String correta) {
+    public Questao(String pergunta, String opcaoA, String opcaoB, String opcaoC, String opcaoD, String opcaoE, String correta) {
         this.pergunta = pergunta;
         this.opcaoA = opcaoA;
         this.opcaoB = opcaoB;
@@ -21,9 +22,10 @@ public class Questao {
         this.correta = correta;
     }
 
+
     public boolean isCorreta(String resposta){
         if(resposta.equalsIgnoreCase(this.correta)){
-            System.out.println("Parabéns resposta Correta! - Letra: " + this.correta);
+            System.out.println("Parabéns, resposta Correta! - Letra: " + this.correta);
             System.out.println("");
             return true;
         } else {
@@ -35,26 +37,27 @@ public class Questao {
     }
 
     public String leiaResposta() {
-        Scanner ler = new Scanner(System.in);
+        Scanner ler = new Scanner(System.in);  // Cria um Scanner para leitura de input
         String resp;
         do {
             System.out.println("Digite a resposta: ");
-            resp = ler.next();
-        } while (!respostaValida(resp));
+            resp = ler.next();  // Lê a resposta do usuário
+        } while (!respostaValida(resp));  // Continua pedindo até a resposta ser válida
         return resp;
     }
 
     private boolean respostaValida(String resp){
-        if(resp.equalsIgnoreCase("A") || resp.equalsIgnoreCase("B") || resp.equalsIgnoreCase("C") ||
-                resp.equalsIgnoreCase("D") || resp.equalsIgnoreCase("E")){
+        if(resp.equalsIgnoreCase("A") || resp.equalsIgnoreCase("B") ||
+                resp.equalsIgnoreCase("C") || resp.equalsIgnoreCase("D") ||
+                resp.equalsIgnoreCase("E")){
             return true;
         }
-        System.out.println("Resposta inválida! Digite opção A, B, C, D ou E. ");
+        System.out.println("Resposta inválida! Digite opção A, B, C, D ou E.");
         System.out.println("");
         return false;
     }
 
-        public static void cabecalho(){
+    public static void cabecalho(){
         System.out.println("UNIFAN - Universidade Alfredo Nasser");
         System.out.println("Aluno: Antony Gabriel Moreira de Carvalho");
         System.out.println("Professor: Brenno Pimenta");
@@ -72,8 +75,9 @@ public class Questao {
         System.out.println(this.opcaoD);
         System.out.println(this.opcaoE);
         System.out.println();
-}
-   // Método main para iniciar o programa
+    }
+
+    // Método main para iniciar o programa
     public static void main(String[] args) {
 
         cabecalho();
@@ -99,6 +103,62 @@ public class Questao {
                 "04 - Quem é a mãe de Ranni, Radahn e Rykard?",
                 "A) Malenia, Lâmina de Miquella", "B) Romina, Santa do Bulbo", "C) Rya, da Mansão Vulcânica", "D) Rennala, Rainha da Lua Cheia", "E) Rellana, das Lâminas Gêmeas", "D"
         ));
+
+        questoes.add(new Questao(
+                "05 - Qual o nome da área onde você encontra o Gigante de Fogo?",
+                "A) Lyndell, Capital Real", "B) Pico das Montanhas dos Gigantes", "C) Pântano de Aeonia", "D) Nokron, Cidade Eterna", "E) Mansão Vulcânica", "B"
+        ));
+
+        questoes.add(new Questao(
+                "06 - Qual o nome do NPC que ajuda o jogador a enfrentar Radahn?",
+                "A) Blaidd", "B) Ranni", "C) Fia", "D) Rogier", "E) Seluvis", "A"
+        ));
+
+        questoes.add(new Questao(
+                "07 - Qual item é necessário para acessar a Cidade Eterna, Nokron?",
+                "A) Medalhão de Dectus", "B) Anel de Lua Negra", "C) Lâmina de Miquella", "D) Fragmento do Destino", "E) Adaga de Mogh", "D"
+        ));
+
+        questoes.add(new Questao(
+                "08 - Qual o nome do evento em que Radahn é enfrentado?",
+                "A) Festival da Lua", "B) Torneio de Lyndell", "C) Festival de Radahn", "D) Conflito de Redmane", "E) Cerco de Nokron", "C"
+        ));
+
+        questoes.add(new Questao(
+                "09 - Quem é o verdadeiro vilão da lore de Elden Ring?",
+                "A) Maliketh", "B) Malenia", "C) Radagon", "D) A Velha Árvoresposa", "E) Marika", "D"
+        ));
+
+        questoes.add(new Questao(
+                "10 - Qual o nome do chefe encontrado no topo da Mansão Vulcânica?",
+                "A) Rykard, Senhor da Blasfêmia", "B) Godrick, o Enxertado", "C) Rennala, Rainha da Lua Cheia", "D) Radahn, o Flagelo Celeste", "E) Malenia, a Espada de Miquella", "A"
+        ));
+
+        questoes.add(new Questao(
+                "11 - Qual o nome da espada usada por Blaidd?",
+                "A) Espada Lobo Sangrento", "B) Lâmina de Escamas de Dragão", "C) Espada Grande do Alvorecer", "D) Espada Grande de Bastardo", "E) Espada Grande do Cavaleiro Negro", "A"
+        ));
+
+        questoes.add(new Questao(
+                "12 - Qual a condição para ativar o Grande Elevador de Dectus?",
+                "A) Derrotar Maliketh", "B) Obter as duas metades do Medalhão de Dectus", "C) Completar a quest de Ranni", "D) Encontrar a Árvore Sagrada de Miquella", "E) Invocar o cavalo Torrente", "B"
+        ));
+
+        questoes.add(new Questao(
+                "13 - Quem dá ao jogador o convite para o Festival de Radahn?",
+                "A) Alexander, o Guerreiro Jarro", "B) Blaidd", "C) Jerren", "D) Seluvis", "E) Rogier", "C"
+        ));
+
+        questoes.add(new Questao(
+                "14 - Quem é o portador do anel de Elden que inicia a história?",
+                "A) Godfrey", "B) Radagon", "C) Marika", "D) Fia", "E) Rennala", "C"
+        ));
+
+        questoes.add(new Questao(
+                "15 - Qual o nome do cavalo que Radahn monta?",
+                "A) Rani", "B) Lobo da Tempestade", "C) Torrente", "D) Leonard", "E) Cervo Negro", "D"
+        ));
+
 
         for (Questao questao : questoes) {
             questao.escrevaQuestao();
